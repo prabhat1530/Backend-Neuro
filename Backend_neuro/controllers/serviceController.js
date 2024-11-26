@@ -47,7 +47,7 @@ const deleteService = async (req, res) => {
 
   try {
     await prisma.service.delete({
-      where: { id: parseInt(id, 10) },
+      where: { id: parseInt(id) },
     });
 
     res.status(200).json({ message: 'Service deleted successfully' });
@@ -61,4 +61,4 @@ const deleteService = async (req, res) => {
 
 
 
-module.exports = {listServices, addService,deleteService,updateService};
+module.exports = { listServices, addService, deleteService, updateService };
